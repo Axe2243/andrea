@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>awita suprema</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <script src="bon non lo so.js"></script>
+    <link rel="stylesheet" href="stile.css">
+</head>
+<body>
+
+    <style>
+     body {
+    margin: 0;
+    background: #f5f5f5;
+    color: #4e4e4e;
+    font: 18px/27px 'Arial', sans-serif;
+    text-align: center;
+  }
+  
+
+ 
+  h4,
+  h5,
+  h6 {
+    color: #1e1e1e;
+  }
+  
+  /*header+nav*/
+  
+  header {
+    background-color: #383232;
+    color: #fff;
+    padding: 15px;
+    text-align: left;
+    position: sticky;
+    height: auto;
+  }
+  
+  nav {
+    background-color: #404040;
+    color: #fff;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0%;
+    padding: 0;
+  }
+  
+  nav li a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  nav li:hover {
+    background-color: transparent
+  }
+  
+  nav li {
+    display: inline-block;
+    padding: 15px;
+  }
+  
+  nav#slide-menu {
+    position: fixed;
+    top: 0;
+    left: -100px;
+    bottom: 0;
+    display: block;
+    float: left;
+    width: 100%;
+    max-width: 284px;
+    height: 100%;
+    transition: all 300ms;
+  }
+  
+  nav#slide-menu > ul {
+    display: block;
+    margin: 40px;
+    padding: 0;
+    list-style: none;
+    opacity: 0.5;
+    transition: all 300ms;
+  }
+  
+  nav#slide-menu > ul li {
+    color: #dfe5eb;
+    padding: 6px 0;
+    cursor: pointer;
+  }
+  
+  nav#slide-menu > ul li:hover {
+    color: #59e9df;
+  }
+  
+  nav#slide-menu > ul li:before {
+    font-family: "ico";
+    font-style: normal;
+    font-weight: normal;
+    speak-as: none;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    color: #59e9df;
+    margin-right: 12px;
+    text-align: center;
+    font-variant: normal;
+    font-size: 0.75em;
+    text-transform: none;
+    line-height: 1em;
+  }
+  
+  nav#slide-menu > ul li.sep {
+    margin-top: 7px;
+    padding-top: 14px;
+    border-top: 1px solid #6b7b8d;
+  }
+  
+  body.menu-active nav#slide-menu {
+    left: 0px;
+  }
+  
+  body.menu-active nav#slide-menu ul {
+    left: 0px;
+    opacity: 1;
+  }
+  
+  /*button*/
+  
+  button {
+    background-color: transparent;
+    border: 3px ridge #149CEA;
+    border-radius: 0.3em;
+    color: #fff;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    outline: none;
+    width: 10em;
+    position: relative;
+    height: 3.5em;
+    transition: 1s;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .button2 {
+    background-color: transparent;
+  }
+  
+  .button3 {
+    background-color: transparent;
+  }
+  
+  .button4 {
+    background-color: transparent;
+  }
+  
+  .button5 {
+    background-color: transparent;
+  }
+  
+  button::after {
+    content: "";
+    position: absolute;
+    top: -8.5px;
+    left: 3%;
+    width: 95%;
+    height: 40%;
+    background-color: #404040;
+    transition: 0.5s;
+    transform-origin: center;
+  }
+  
+  button::before {
+    content: "";
+    transform-origin: center;
+    position: absolute;
+    top: 70.9%;
+    left: 3%;
+    width: 95%;
+    height: 40%;
+    background-color: #404040;
+    transition: 0.5s
+  }
+
+button:hover::before, button:hover::after {
+  transform: scale(0)
+}
+
+button:hover {
+  box-shadow: inset 0px 0px 25px #1479EA;
+}
+
+/*immagine*/
+
+.background-image {
+    position: relative;
+    height: 650px; /* Altezza desiderata del contenitore */
+    text-align: center;
+    color: white; /* Colore del testo */
+}
+
+.background-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://orvietosi.it/wp-content/uploads/2018/08/ludopatia.jpg); 
+    background-size: cover;
+    background-position: center;
+    filter: brightness(50%); /* Imposta la luminosità dell'immagine al 50% */
+}
+
+h1 {
+    font-size:50px; /* Dimensione del titolo */
+    position: absolute;
+    text-transform: capitalize;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    /* Centra il titolo sia verticalmente che orizzontalmente */
+    z-index: 1;
+}
+  
+/*siamo al 2° pezzo (about)*/
+
+/* Contenitore della flip card */
+  
+.flip-card {
+  background-color: transparent;
+  width: 400px; /*larghrzza */
+  height: 300px;  /*altezza*/
+  perspective: 1000px; /* Aggiunge la profondità */
+  display: inline-block;
+  margin: 20px;
+}
+
+/* Interno della flip card */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+/* Lato frontale della flip card */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Nasconde il lato nascosto */
+}
+
+/* Lato frontale */
+.flip-card-front {
+  background-color: #bbb; /* Colore di sfondo */
+  color: rgb(255, 255, 255); /* Colore del testo */
+}
+
+/* Lato posteriore */
+.flip-card-back {
+  background-color: #000; /* Colore di sfondo */
+  color: white; /* Colore del testo */
+  transform: rotateY(180deg); /* Ruota di 180 gradi */
+  
+}
+
+/* Quando passi sopra la flip card, applica l'effetto flip */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Immagine all'interno della flip card */
+.card-image {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+.flip-card-back p{
+  margin: 20px;
+}
+
+/*3° pezzo (fasi)*/
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f3f3;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  color: #02886f;
+  text-align: center;
+}
+
+.subtitle {
+  color: #02886f;
+}
+
+.phase {
+  margin-bottom: 20px;
+}
+
+.phase p {
+  text-align: justify;
+}
+
+
+
+/*4° pezzo (sintomi)*/
+body {
+  font-family: Arial, sans-serif;
+  background-color: #15505e;;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  color: #02886f;
+  text-align: center;
+}
+
+.subtitle {
+  color: #02886f;
+}
+
+.subtitle::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 2px;
+  background-color: #02886f;
+  margin: 10px auto;
+}
+
+.phase {
+  margin-bottom: 20px;
+}
+
+.phase p {
+  text-align: justify;
+}
+
+/*4° pezzo (sintomi)*/
+
+.symptoms-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: #15505e;
+}
+
+.symptom {
+  width: calc(33.33% - 40px);
+  margin: 20px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  border: 2px solid #02886f; /* bordo */
+  text-align: center;
+}
+
+.symptom:hover {
+  transform: translateY(-5px);
+}
+
+.symptom-icon {
+  font-size: 2em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.symptom-description {
+  font-size: 1.1em;
+  line-height: 1.5;
+}
+
+/*trattamento ultimo pezzo*/
+
+
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  overflow: hidden;
+  width: calc(50% - 40px);
+  max-width: 500px;
+}
+
+.content {
+  padding: 20px;
+}
+</style>
+
+<!--Sintomi-->
+
+<section id="sintomi">
+    <h2 style="color: #000;">PORQUÉ ES IMPORTANTE RECICLAR EL AGUA</h2>
+        <h4>La filtración es cualquiera de las diversas operaciones mecánicas, físicas o biológicas que separar sólidos de líquidos (líquidos o gases) mediante la interposición de un medio a través del cual puede pasar únicamente el líquido.</h4>
+</section>
+        <div class="symptoms-list">
+            <div class="symptom">
+                <div class="symptom-icon">🌾</div>
+                <div class="symptom-description">Al reutilizar el mismo agua una y otra vez mediante su reciclado, es posible evitar que haya que obtenerla de acuíferos, pantanos y depósitos de agua naturales o artificiales similares. Por tanto, la agricultura, la ganadería y el propio consumo doméstico se ven beneficiados.</div>
+            </div>
+            <div class="symptom">
+                <div class="symptom-icon">🌎</div>
+                <div class="symptom-description">En muchos países reciclar el agua no es más que una política de estado, las aguas residuales que fluyen por el desagüe se filtran y procesan hasta lograr un líquido tan puro como el del manantial. Expertos aseguran que si en una ciudad se reciclaran todas sus aguas residuales, se podría reducir un 60% el consumo del agua.</div>
+            </div>
+            <div class="symptom">
+                <div class="symptom-icon">♻️</div>
+                <div class="symptom-description">Reciclar agua es el proceso por el que convertimos agua destinada a ser desechada en agua útil. Se puede realizar a gran escala, gracias a las depuradoras que pueden limpiar el agua, o de manera doméstica con pequeños hábitos que nos ayuden a aprovechar el agua</div>
+            </div>
+            <div class="symptom">
+                <div class="symptom-icon">🪣</div>
+                <div class="symptom-description">
+•  Recoger aguas de lluvias <br>
+•   Poner platos en las macetas <br>
+•   Reaprovechar el agua de la ropa para la limpieza o para el baño <br>
+•   Utilizar justo la cantidad necesaria para descargar el inodoro colocando volumen en el tanque <br>
+</div>
+            </div>
+            <div class="symptom">
+                <div class="symptom-icon">💧</div>
+                <div class="symptom-description">El cuidado del agua es importante porque es un recurso vital para la supervivencia humana y el mantenimiento de los ecosistemas. El agua es esencial para la vida, y es necesaria para el consumo, la higiene, la producción de alimentos y la generación de energía. Sin agua, la vida tal como la conocemos no sería posible.</div>
+            </div>
+        </div>
+    </div>
+
+    </section>
+      <section class="text-gray-700 body-font border-t border-gray-.200">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="flex flex-col text-center w-full mb-20">
+            <h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">©proyecto escolar de el CETIS153</h2>
+
+          </div>
+
+</section>
